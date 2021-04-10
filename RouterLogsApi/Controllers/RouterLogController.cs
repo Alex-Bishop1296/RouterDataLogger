@@ -26,19 +26,30 @@ namespace RouterLogsApi.Controllers
         }
 
         //GET api/routerLog
+        /// <summary>
+        /// Basic GET, returns all entries in the RouterLogs table
+        /// </summary>
+        /// <returns>IEnumerable<RouterLog> containing all enties in the RouterLogs table</returns>
         [HttpGet]
         public ActionResult <IEnumerable<RouterLog>> GetAllRouterLogs()
         {
             IEnumerable<RouterLog> table = databaseContext.RouterLogs
-                                                    .ToList();
+                                                        .ToList();
             return Ok(table);
         }
 
         //GET api/routerLog/{id}
+        /// <summary>
+        /// Basic GET, returns an entry from the RouterLogs table based on it's Id field
+        /// </summary>
+        /// <param name="id">id the caller is searching for</param>
+        /// <returns>Routerlog with inputed Id</returns>
         [HttpGet("{id}")]
         public ActionResult <RouterLog> GetRouterLogById(int id)
         {
-            RouterLog IdLog = databaseContext.RouterLogs.Where(x => x.Id == id).FirstOrDefault();
+            RouterLog IdLog = databaseContext.RouterLogs
+                                            .Where(x => x.Id == id)
+                                            .FirstOrDefault();
             return Ok(IdLog);
         }
     }

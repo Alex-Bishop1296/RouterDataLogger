@@ -1,4 +1,4 @@
-﻿// RoutersContext.cs controls our connection to the DB with EFCore
+﻿// RoutersContext.cs controls our connection to the DB with EFCore using our models.
 /* DEV NOTE:: I decided to not set up a repository layer between DbContext and the API / Console App, the reason I did this was after inital research it seemed redundant as DbContext itself has the features of a repo, so changes made
     In the repo would have to be made multiple places and with little gain in the extra layer of abstaction. I am still unsure if this is the best method but for now I will proceed with the project without a repo layer.
 */
