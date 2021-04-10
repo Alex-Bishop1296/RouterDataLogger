@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouterDataLogger", "RouterD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLibrary", "DataAccessLibrary\DataAccessLibrary.csproj", "{9AC28FAA-41FC-4E27-AB90-567B5773A65C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouterLogsApi", "RouterLogsApi\RouterLogsApi.csproj", "{0846CB7B-E6DC-4E53-A1AE-70F98167FCB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9AC28FAA-41FC-4E27-AB90-567B5773A65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AC28FAA-41FC-4E27-AB90-567B5773A65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AC28FAA-41FC-4E27-AB90-567B5773A65C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0846CB7B-E6DC-4E53-A1AE-70F98167FCB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0846CB7B-E6DC-4E53-A1AE-70F98167FCB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0846CB7B-E6DC-4E53-A1AE-70F98167FCB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0846CB7B-E6DC-4E53-A1AE-70F98167FCB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -100,7 +100,7 @@ namespace RouterDataLogger
         /// <param name="timeStamp">The Timestamp of the router log to add</param>
         private void CreateDatabaseEntry(string statusCode, string serialCode, DateTime timeStamp)
         {
-            using(var db = new RouterLogsContext())
+            using(var db = new RoutersContext())
             {
                 RouterLog addedLog = new RouterLog()
                 {

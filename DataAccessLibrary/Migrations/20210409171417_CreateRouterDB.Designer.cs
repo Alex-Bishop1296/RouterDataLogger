@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLibrary.Migrations
 {
-    [DbContext(typeof(RouterLogsContext))]
+    [DbContext(typeof(RoutersContext))]
     [Migration("20210409171417_CreateRouterDB")]
     partial class CreateRouterDB
     {

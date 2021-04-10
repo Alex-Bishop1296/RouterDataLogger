@@ -1,4 +1,8 @@
-﻿using System;
+﻿// RoutersContext.cs controls our connection to the DB with EFCore
+/* DEV NOTE:: I decided to not set up a repository layer between DbContext and the API / Console App, the reason I did this was after inital research it seemed redundant as DbContext itself has the features of a repo, so changes made
+    In the repo would have to be made multiple places and with little gain in the extra layer of abstaction. I am still unsure if this is the best method but for now I will proceed with the project without a repo layer.
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLibrary.DataAccess
 {
-    public class RouterLogsContext : DbContext
+    public class RoutersContext : DbContext
     {
         // Connection String for our database, we are using "localdb" native MSSQL driver 
         private const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=RoutersDB;Trusted_Connection=True;";
