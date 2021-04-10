@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAccessLibrary.DataAccess
 {
-    class RouterLogsContext : DbContext
+    public class RouterLogsContext : DbContext
     {
         // Connection String for our database, we are using "localdb" native MSSQL driver 
         private const string connectionString = "Server=(localdb)\\mssqllocaldb;Database=RoutersDB;Trusted_Connection=True;";
