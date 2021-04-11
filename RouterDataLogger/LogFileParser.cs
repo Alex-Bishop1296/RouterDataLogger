@@ -17,6 +17,10 @@ namespace RouterDataLogger
         /// A DirectoryInfo object containing the path to the Logs folder
         /// </summary>
         private DirectoryInfo logsFolder;
+        /// <summary>
+        /// A DBcontext object for our database to access the routers log table
+        /// </summary>
+        private RoutersContext db;
 
         /// <summary>
         /// Constructor
@@ -24,7 +28,9 @@ namespace RouterDataLogger
         /// <param name="directoryInfo">A DirectoryInfo object containing the path to the Logs folder</param>
         public LogFileParser(DirectoryInfo directoryInfo)
         {
+            db = new RoutersContext();
             logsFolder = directoryInfo;
+            DeleteDatabaseAndRecreate();
             ParseFiles();
         }
         
@@ -33,8 +39,7 @@ namespace RouterDataLogger
         /// </summary>
         private void ParseFiles()
         {
-            int count = 0;
-
+            int count = 0;  // Debuging, used to keep track of file count
             // Start a search of the Logs folder, only looking at files ending in "WL5GInterference.xml"
             foreach (FileInfo file in logsFolder.GetFiles("*WL5GInterference.xml", SearchOption.AllDirectories))
             {
@@ -100,17 +105,23 @@ namespace RouterDataLogger
         /// <param name="timeStamp">The Timestamp of the router log to add</param>
         private void CreateDatabaseEntry(string statusCode, string serialCode, DateTime timeStamp)
         {
-            using(var db = new RoutersContext())
+            RouterLog addedLog = new RouterLog()
             {
-                RouterLog addedLog = new RouterLog()
-                {
-                    Serial = serialCode,
-                    Status = statusCode,
-                    Timestamp = timeStamp
-                };
-                db.RouterLogs.Add(addedLog);
-                db.SaveChanges();
-            }
+                Serial = serialCode,
+                Status = statusCode,
+                Timestamp = timeStamp
+            };
+            db.RouterLogs.Add(addedLog);
+            db.SaveChanges();
+        }
+
+        /// <summary>
+        /// Deletes the database and recreates it
+        /// </summary>
+        private void DeleteDatabaseAndRecreate()
+        {
+            db.Database.EnsureDeleted();
+            db.Database.EnsureCreated();
         }
     }
 }
