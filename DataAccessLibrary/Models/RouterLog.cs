@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataAccessLibrary.Models
 {
+    /// <summary>
+    /// Basic Model for the Router Log table entries
+    /// </summary>
     public class RouterLog
     {
         public int Id { get; set; }

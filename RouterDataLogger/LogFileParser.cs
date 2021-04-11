@@ -33,7 +33,7 @@ namespace RouterDataLogger
             DeleteDatabaseAndRecreate();
             ParseFiles();
         }
-        
+
         /// <summary>
         /// Main method of the class, takes the DirectoryInfo object and starts to parse it as if it were the Logs folder, placing the appropriate 
         /// </summary>

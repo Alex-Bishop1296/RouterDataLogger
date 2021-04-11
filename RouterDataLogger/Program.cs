@@ -19,7 +19,7 @@ namespace RouterDataLogger
             Console.WriteLine("Welcome. This application can be used to take router Logs located in the 'Logs' folder and place the information in the path and WL5GInterference.xml status information." +
                                 "\r\n--The filepath has been set in the Program.cs, but can be set manually by entering \"set path\" to the next prompt, enter any other command to move on with default path.");
             filePathCheck = Console.ReadLine();
-            if(filePathCheck=="set path")
+            if (filePathCheck == "set path")
             {
                 Console.WriteLine("--Enter file path:");
                 logFiles = new DirectoryInfo(Console.ReadLine());
