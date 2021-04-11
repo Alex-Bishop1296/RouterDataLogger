@@ -48,7 +48,10 @@ namespace RouterLogsApi.Controllers
             RouterLog IdLog = databaseContext.RouterLogs
                                             .Where(x => x.Id == id)
                                             .FirstOrDefault();
-            // Implement 404 code for a nonvalid routerlog
+            if(IdLog == default | IdLog == null)
+            {
+                return BadRequest();
+            }
             return Ok(IdLog);
         }
     }
