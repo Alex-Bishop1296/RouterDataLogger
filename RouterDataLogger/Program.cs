@@ -8,6 +8,7 @@ namespace RouterDataLogger
     {
         static void Main(string[] args)
         {
+            //Add functionality to drop database before creation step
             // Dev note: Replace path to Logs folder here, THE FOLDER MUST BE NAMED "Logs"
             DirectoryInfo logFiles = new DirectoryInfo(@"C:\Users\Alex\source\repos\RouterDataLogger\RouterDataLogger\Logs");
             try

@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using DataAccessLibrary.DataAccess;
 using DataAccessLibrary.Models;
 
@@ -34,7 +32,7 @@ namespace RouterLogsApi.Controllers
         public ActionResult <IEnumerable<RouterLog>> GetAllRouterLogs()
         {
             IEnumerable<RouterLog> table = databaseContext.RouterLogs
-                                                        .ToList();
+                                                         .ToList();
             return Ok(table);
         }
 
@@ -50,6 +48,7 @@ namespace RouterLogsApi.Controllers
             RouterLog IdLog = databaseContext.RouterLogs
                                             .Where(x => x.Id == id)
                                             .FirstOrDefault();
+            // Implement 404 code for a nonvalid routerlog
             return Ok(IdLog);
         }
     }
